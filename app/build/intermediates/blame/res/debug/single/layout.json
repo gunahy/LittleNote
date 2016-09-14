@@ -184,16 +184,16 @@
         "source": "G:\\git\\LittleNote\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.0\\res\\layout\\design_navigation_item_subheader.xml"
     },
     {
-        "merged": "G:\\git\\LittleNote\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_deal_fragment.xml",
-        "source": "G:\\git\\LittleNote\\app\\src\\main\\res\\layout\\activity_deal_fragment.xml"
-    },
-    {
         "merged": "G:\\git\\LittleNote\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
         "source": "G:\\git\\LittleNote\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\layout\\abc_list_menu_item_icon.xml"
     },
     {
         "merged": "G:\\git\\LittleNote\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_header.xml",
         "source": "G:\\git\\LittleNote\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.0\\res\\layout\\design_navigation_item_header.xml"
+    },
+    {
+        "merged": "G:\\git\\LittleNote\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_deal_element.xml",
+        "source": "G:\\git\\LittleNote\\app\\src\\main\\res\\layout\\activity_deal_element.xml"
     },
     {
         "merged": "G:\\git\\LittleNote\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media.xml",
@@ -206,6 +206,10 @@
     {
         "merged": "G:\\git\\LittleNote\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_cancel_action.xml",
         "source": "G:\\git\\LittleNote\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\layout\\notification_media_cancel_action.xml"
+    },
+    {
+        "merged": "G:\\git\\LittleNote\\app\\build\\intermediates\\res\\merged\\debug\\layout\\edit_deal_element.xml",
+        "source": "G:\\git\\LittleNote\\app\\src\\main\\res\\layout\\edit_deal_element.xml"
     },
     {
         "merged": "G:\\git\\LittleNote\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",

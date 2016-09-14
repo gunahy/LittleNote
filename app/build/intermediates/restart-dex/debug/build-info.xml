@@ -4,27 +4,27 @@
     api-level="19"
     density="xxhdpi"
     format="7"
-    timestamp="1062044206214383"
+    timestamp="1145838154969829"
     token="6956325268553461319" >
 
     <task
         name="javac"
-        duration="274" />
+        duration="355" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="348" />
     <task
         name="verifier"
-        duration="0" />
+        duration="94" />
 
     <artifact
         location="G:\git\LittleNote\app\build\outputs\apk\app-debug.apk"
         type="MAIN" />
 
-    <build timestamp="1062044206214383" >
+    <build timestamp="1145838154969829" >
         <artifact
             location="G:\git\LittleNote\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />

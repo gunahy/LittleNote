@@ -1,6 +1,8 @@
 package com.lesson1.android2.littlenote;
 
 import android.app.ListActivity;
+import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -11,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,8 +38,11 @@ public class DealsList extends AppCompatActivity {
     private ListView lvUserNote;
     private AppDB db;
     private Toolbar toolbar;
-    private ArrayAdapter elementAdapter;
     private AdapterView.OnItemClickListener onItemClickListener;
+    private FloatingActionButton fab;
+    private View.OnClickListener onClickListener;
+    private EditText etTitleNote, etDescNote, etDateNote, etMap;
+    private String nTitle, nDesc, nDate, nCoord;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,16 +56,9 @@ public class DealsList extends AppCompatActivity {
         initListView();
 
         setSupportActionBar(toolbar);
-        lvUserNote.setOnItemClickListener(onItemClickListener);
+        lvUserNote.setOnItemClickListener(itemListerListener());
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "User id=" + userId, Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        fab.setOnClickListener(addNote());
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
@@ -68,29 +67,35 @@ public class DealsList extends AppCompatActivity {
         onItemClickListener = new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (cursor.moveToPosition(position)){
-                    Intent eIntent = new Intent(DealsList.this, DealElement.class);
-                    eIntent.putExtra(COL_USERID, cursor.getString(cursor.getColumnIndex(COL_USERID)));
-                    eIntent.putExtra(COL_TITLE, cursor.getString(cursor.getColumnIndex(COL_TITLE)));
-                    eIntent.putExtra(COL_DESC, cursor.getString(cursor.getColumnIndex(COL_DESC)));
-                    eIntent.putExtra(COL_DATE, cursor.getString(cursor.getColumnIndex(COL_DATE)));
-                    eIntent.putExtra(COL_COORD, cursor.getString(cursor.getColumnIndex(COL_COORD)));
-                    startActivity(eIntent);
-                }
-                else {
-                    Toast.makeText(DealsList.this, "Необходимо добвать запись", Toast.LENGTH_LONG).show();
-                }
+                cursor = db.getUserNote(userId, position);
+//                if (cursor.moveToLast()){
+                    Intent setIntent = new Intent(DealsList.this, DealElement.class);
+//                    eIntent.putExtra(COL_USERID, cursor.getString(cursor.getColumnIndex(COL_USERID)));
+//                    eIntent.putExtra(COL_TITLE, cursor.getString(cursor.getColumnIndex(COL_TITLE)));
+//                    eIntent.putExtra(COL_DESC, cursor.getString(cursor.getColumnIndex(COL_DESC)));
+//                    eIntent.putExtra(COL_DATE, cursor.getString(cursor.getColumnIndex(COL_DATE)));
+//                    eIntent.putExtra(COL_COORD, cursor.getString(cursor.getColumnIndex(COL_COORD)));
+                    startActivity(setIntent);
+//                }
+//                else {
+//                    Toast.makeText(DealsList.this, "Необходимо добвать запись", Toast.LENGTH_LONG).show();
+//                }
+                //Toast.makeText(DealsList.this, "userId=" + userId + ", _id=" + position, Toast.LENGTH_LONG).show();
+
             }
         };
         return onItemClickListener;
     }
 
 
-        private void initViews(){
+    private void initViews(){
+        fab = (FloatingActionButton) findViewById(R.id.fab);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         lvUserNote = (ListView) findViewById(R.id.lvUserNote);
-
-
+        etTitleNote = (EditText) findViewById(R.id.etTitleNote);
+        etDescNote = (EditText) findViewById(R.id.etDescNote);
+        etDateNote = (EditText) findViewById(R.id.etDateNote);
+        etMap = (EditText) findViewById(R.id.etMap);
     }
 
     private void initListView(){
@@ -104,6 +109,14 @@ public class DealsList extends AppCompatActivity {
         db.openConnection(true);
     }
 
-
-
+    private View.OnClickListener addNote(){
+        onClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent editIntent = new Intent(DealsList.this, EditDealActivity.class);
+                startActivity(editIntent);
+            }
+        };
+        return onClickListener;
+    }
 }

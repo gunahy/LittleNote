@@ -93,6 +93,17 @@ public class AppDB {
         return mDB.query(Users.TABLE_USERS, null, null, null, null, null, null);
     }
 
+    // выбрать все заметки пользователя
+    public Cursor getAllUserNotes(long userId) {
+        return mDB.query(UserNotes.TABLE_USER_NOTE, null, UserNotes.COLUMN_NAME_USER_ID + WHERE_ARGS, new String[]{String.valueOf(userId)}, null, null, null);
+    }
+
+    // выбрать заметку польователя
+    public Cursor getUserNote(int userId,long id){
+        return mDB.query(UserNotes.TABLE_USER_NOTE, null, UserNotes.COLUMN_NAME_USER_ID
+                + " = " + userId + " AND " + UserNotes._ID + " = " + id, null, null, null, null);
+    }
+
     // добавить запись в Users
     public long addUser(String name, String lastName, int age) {
         v_user = new ContentValues();
@@ -108,6 +119,17 @@ public class AppDB {
 
         mDB.insert(UserNotes.TABLE_USER_NOTE, null, v_note);
         return id;
+    }
+
+    // добавить заметку польователя
+    public long addNote(int userId, String title, String decs, String date, String coord) {
+        v_note = new ContentValues();
+        v_note.put(UserNotes.COLUMN_NAME_USER_ID, userId);
+        v_note.put(UserNotes.COLUMN_NAME_TITLE, title);
+        v_note.put(UserNotes.COLUMN_NAME_DESCRIPTION, decs);
+        v_note.put(UserNotes.COLUMN_NAME_DATE, date);
+        v_note.put(UserNotes.COLUMN_NAME_COORD, coord);
+        return mDB.insert(UserNotes.TABLE_USER_NOTE, null, v_note);
     }
 
     // удалить запись из Users
@@ -138,10 +160,6 @@ public class AppDB {
     public void clearTableUser(){
         mDB.delete(Users.TABLE_USERS, null, null);
         mDB.delete(UserNotes.TABLE_USER_NOTE, null, null);
-    }
-
-    public Cursor getAllUserNotes(long userId) {
-        return mDB.query(UserNotes.TABLE_USER_NOTE, null, UserNotes.COLUMN_NAME_USER_ID + WHERE_ARGS, new String[]{String.valueOf(userId)}, null, null, null);
     }
 
     public class AppDBHelper extends SQLiteOpenHelper {

@@ -2638,11 +2638,16 @@ containing a value of this type.
         public static final int enterAlways=0x7f0c0015;
         public static final int enterAlwaysCollapsed=0x7f0c0016;
         public static final int etAge=0x7f0c007b;
+        public static final int etDataStart=0x7f0c0072;
+        public static final int etDateNote=0x7f0c0071;
+        public static final int etDescNote=0x7f0c0070;
         public static final int etEAge=0x7f0c0089;
         public static final int etELastName=0x7f0c0088;
         public static final int etEName=0x7f0c0087;
         public static final int etLastName=0x7f0c007a;
+        public static final int etMap=0x7f0c0073;
         public static final int etName=0x7f0c0079;
+        public static final int etTitleNote=0x7f0c006f;
         public static final int exitUntilCollapsed=0x7f0c0017;
         public static final int expand_activities_button=0x7f0c0041;
         public static final int expanded_menu=0x7f0c0054;
@@ -2720,7 +2725,6 @@ containing a value of this type.
         public static final int text=0x7f0c0095;
         public static final int text2=0x7f0c0093;
         public static final int textSpacerNoButtons=0x7f0c0050;
-        public static final int textView4=0x7f0c0072;
         public static final int text_input_password_toggle=0x7f0c0086;
         public static final int time=0x7f0c0091;
         public static final int title=0x7f0c0046;
@@ -2730,12 +2734,8 @@ containing a value of this type.
         public static final int topPanel=0x7f0c004a;
         public static final int touch_outside=0x7f0c007d;
         public static final int tvAge=0x7f0c0099;
-        public static final int tvDateNote=0x7f0c0071;
-        public static final int tvDescNote=0x7f0c0070;
         public static final int tvItemNote=0x7f0c008a;
         public static final int tvLastName=0x7f0c009a;
-        public static final int tvMap=0x7f0c0073;
-        public static final int tvTitleNote=0x7f0c006f;
         public static final int up=0x7f0c0009;
         public static final int useLogo=0x7f0c0014;
         public static final int userListView=0x7f0c0076;
@@ -2780,7 +2780,7 @@ containing a value of this type.
         public static final int abc_search_dropdown_item_icons_2line=0x7f040017;
         public static final int abc_search_view=0x7f040018;
         public static final int abc_select_dialog_material=0x7f040019;
-        public static final int activity_deal_element =0x7f04001a;
+        public static final int activity_deal_element=0x7f04001a;
         public static final int activity_deals_list=0x7f04001b;
         public static final int activity_main=0x7f04001c;
         public static final int add_dialog=0x7f04001d;
@@ -2798,21 +2798,22 @@ containing a value of this type.
         public static final int design_navigation_menu=0x7f040029;
         public static final int design_navigation_menu_item=0x7f04002a;
         public static final int design_text_input_password_icon=0x7f04002b;
-        public static final int edit_dialog=0x7f04002c;
-        public static final int note_item_view=0x7f04002d;
-        public static final int notification_media_action=0x7f04002e;
-        public static final int notification_media_cancel_action=0x7f04002f;
-        public static final int notification_template_big_media=0x7f040030;
-        public static final int notification_template_big_media_narrow=0x7f040031;
-        public static final int notification_template_lines=0x7f040032;
-        public static final int notification_template_media=0x7f040033;
-        public static final int notification_template_part_chronometer=0x7f040034;
-        public static final int notification_template_part_time=0x7f040035;
-        public static final int select_dialog_item_material=0x7f040036;
-        public static final int select_dialog_multichoice_material=0x7f040037;
-        public static final int select_dialog_singlechoice_material=0x7f040038;
-        public static final int support_simple_spinner_dropdown_item=0x7f040039;
-        public static final int user_item_view=0x7f04003a;
+        public static final int edit_deal_element=0x7f04002c;
+        public static final int edit_dialog=0x7f04002d;
+        public static final int note_item_view=0x7f04002e;
+        public static final int notification_media_action=0x7f04002f;
+        public static final int notification_media_cancel_action=0x7f040030;
+        public static final int notification_template_big_media=0x7f040031;
+        public static final int notification_template_big_media_narrow=0x7f040032;
+        public static final int notification_template_lines=0x7f040033;
+        public static final int notification_template_media=0x7f040034;
+        public static final int notification_template_part_chronometer=0x7f040035;
+        public static final int notification_template_part_time=0x7f040036;
+        public static final int select_dialog_item_material=0x7f040037;
+        public static final int select_dialog_multichoice_material=0x7f040038;
+        public static final int select_dialog_singlechoice_material=0x7f040039;
+        public static final int support_simple_spinner_dropdown_item=0x7f04003a;
+        public static final int user_item_view=0x7f04003b;
     }
     public static final class menu {
         public static final int main=0x7f0d0000;
@@ -2864,6 +2865,7 @@ containing a value of this type.
         public static final int search_menu_title=0x7f060013;
         public static final int status_bar_notification_info_overflow=0x7f060014;
         public static final int title_activity_deals_list=0x7f06002a;
+        public static final int title_deal_element=0x7f06002b;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat=0x7f08008c;

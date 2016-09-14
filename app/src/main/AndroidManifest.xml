@@ -24,7 +24,16 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.lesson1.android2.littlenote.MainActivity" />
         </activity>
-        <activity android:name=".DealElement"></activity>
+        <activity
+            android:name=".DealElement"
+            android:label="@string/title_deal_element"
+            android:parentActivityName=".DealsList"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.lesson1.android2.littlenote.DealsList" />
+            >
+        </activity>
     </application>
 
 </manifest>

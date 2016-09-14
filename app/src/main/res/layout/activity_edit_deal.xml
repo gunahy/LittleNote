@@ -21,23 +21,23 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <TextView
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Заметка"
-        android:id="@+id/tvTitleNote"
+        android:hint="Заметка"
+        android:id="@+id/etTitleNote"
         android:layout_below="@+id/view"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:textSize="28sp" />
 
-    <TextView
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Описание"
-        android:id="@+id/tvDescNote"
-        android:layout_below="@+id/tvTitleNote"
+        android:hint="Описание"
+        android:id="@+id/etDescNote"
+        android:layout_below="@+id/etTitleNote"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
@@ -45,37 +45,50 @@
         android:lines="5"
         android:linksClickable="false" />
 
-    <TextView
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:hint="@string/hint_date"
-        android:id="@+id/tvDateNote"
-        android:layout_below="@+id/tvDescNote"
+        android:id="@+id/etDateNote"
+        android:layout_below="@+id/etDescNote"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        style="@android:style/Widget.DatePicker" />
+        style="@android:style/Widget.DatePicker"
+        android:autoText="false"
+        android:inputType="date"
+        android:maxLines="1" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/date_field"
-        android:id="@+id/textView4"
-        android:layout_below="@+id/tvDescNote"
-        android:layout_toLeftOf="@+id/tvDateNote"
-        android:layout_toStartOf="@+id/tvDateNote" />
+        android:id="@+id/etDataStart"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/etDateNote"
+        android:layout_toStartOf="@+id/etDateNote" />
 
-    <TextView
-        android:layout_width="wrap_content"
+    <EditText
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/tvMap"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:id="@+id/etMap"
         android:hint="Место встречи"
-        android:autoLink="map" />
+        android:autoLink="map"
+        android:layout_below="@+id/etDateNote"
+        android:layout_alignRight="@+id/etDateNote"
+        android:layout_alignEnd="@+id/etDateNote"
+        android:minLines="1" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Сохранить"
+        android:id="@+id/btnSaveNote"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="saveNote"/>
 
 
 </RelativeLayout>

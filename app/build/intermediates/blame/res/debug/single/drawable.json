@@ -16,12 +16,12 @@
         "source": "G:\\git\\LittleNote\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\drawable\\abc_ic_search_api_material.xml"
     },
     {
-        "merged": "G:\\git\\LittleNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background.xml",
-        "source": "G:\\git\\LittleNote\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\drawable\\abc_dialog_material_background.xml"
-    },
-    {
         "merged": "G:\\git\\LittleNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\plus.png",
         "source": "G:\\git\\LittleNote\\app\\src\\main\\res\\drawable\\plus.png"
+    },
+    {
+        "merged": "G:\\git\\LittleNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background.xml",
+        "source": "G:\\git\\LittleNote\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\drawable\\abc_dialog_material_background.xml"
     },
     {
         "merged": "G:\\git\\LittleNote\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon_refresh.png",
