@@ -1,0 +1,13 @@
+CHANGED,G:\git\LittleNote\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\android\tools\fd\runtime\AppPatchesLoaderImpl.class
+CHANGED,G:\git\LittleNote\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\lesson1\android2\littlenote\R$styleable$override.class
+CHANGED,G:\git\LittleNote\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\lesson1\android2\littlenote\R$drawable$override.class
+CHANGED,G:\git\LittleNote\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\lesson1\android2\littlenote\R$layout$override.class
+CHANGED,G:\git\LittleNote\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\lesson1\android2\littlenote\R$id$override.class
+CHANGED,G:\git\LittleNote\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\lesson1\android2\littlenote\DealsList$override.class
+CHANGED,G:\git\LittleNote\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\lesson1\android2\littlenote\R$mipmap$override.class
+CHANGED,G:\git\LittleNote\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\lesson1\android2\littlenote\R$string$override.class
+CHANGED,G:\git\LittleNote\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\lesson1\android2\littlenote\R$style$override.class
+CHANGED,G:\git\LittleNote\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\lesson1\android2\littlenote\R$integer$override.class
+CHANGED,G:\git\LittleNote\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\android\support\design\R$drawable$override.class
+CHANGED,G:\git\LittleNote\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\lesson1\android2\littlenote\R$menu$override.class
+CHANGED,G:\git\LittleNote\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\android\support\v7\appcompat\R$drawable$override.class

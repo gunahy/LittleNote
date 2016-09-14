@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/tvItemNote"
+        android:textSize="18sp"
+        android:maxLines="2"
+        android:paddingLeft="2sp"
+        android:paddingTop="2sp"
+        android:textColor="#edff2b"
+        android:typeface="sans"
+        android:singleLine="false"
+        android:textStyle="italic" />
+</LinearLayout>
