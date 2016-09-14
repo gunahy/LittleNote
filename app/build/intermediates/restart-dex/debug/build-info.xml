@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="x86"
+    abi="x86,armeabi-v7a"
     api-level="19"
     density="xxhdpi"
     format="7"
-    timestamp="1145838154969829"
+    timestamp="1173686780925154"
     token="6956325268553461319" >
 
     <task
         name="javac"
-        duration="355" />
+        duration="179" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="348" />
+        duration="41" />
     <task
         name="verifier"
-        duration="94" />
+        duration="2" />
 
     <artifact
         location="G:\git\LittleNote\app\build\outputs\apk\app-debug.apk"
         type="MAIN" />
 
-    <build timestamp="1145838154969829" >
+    <build timestamp="1173686780925154" >
         <artifact
             location="G:\git\LittleNote\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />

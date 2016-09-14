@@ -39,8 +39,9 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.lesson1.android2.littlenote.DealsList" />
->
+            >
         </activity>
+        <activity android:name="com.lesson1.android2.littlenote.EditDeal" />
     </application>
 
 </manifest>

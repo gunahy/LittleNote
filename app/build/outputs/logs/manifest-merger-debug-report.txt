@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from G:\git\LittleNote\app\src\main\AndroidManifest.xml:2:1-36:12
+ADDED from G:\git\LittleNote\app\src\main\AndroidManifest.xml:2:1-40:12
 	package
 		ADDED from G:\git\LittleNote\app\src\main\AndroidManifest.xml:3:5-46
 		INJECTED from G:\git\LittleNote\app\src\main\AndroidManifest.xml
@@ -14,7 +14,7 @@ ADDED from G:\git\LittleNote\app\src\main\AndroidManifest.xml:2:1-36:12
 		INJECTED from G:\git\LittleNote\app\src\main\AndroidManifest.xml
 		INJECTED from G:\git\LittleNote\app\src\main\AndroidManifest.xml
 application
-ADDED from G:\git\LittleNote\app\src\main\AndroidManifest.xml:5:5-34:19
+ADDED from G:\git\LittleNote\app\src\main\AndroidManifest.xml:5:5-38:19
 MERGED from [com.android.support:appcompat-v7:24.2.0] G:\git\LittleNote\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.0\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-vector-drawable:24.2.0] G:\git\LittleNote\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.0\AndroidManifest.xml:23:5-20
 MERGED from [com.android.support:support-compat:24.2.0] G:\git\LittleNote\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\AndroidManifest.xml:25:5-20
@@ -120,15 +120,19 @@ ADDED from G:\git\LittleNote\app\src\main\AndroidManifest.xml:23:13-25:80
 	android:name
 		ADDED from G:\git\LittleNote\app\src\main\AndroidManifest.xml:24:17-63
 activity#com.lesson1.android2.littlenote.DealElement
-ADDED from G:\git\LittleNote\app\src\main\AndroidManifest.xml:27:9-33:85
+ADDED from G:\git\LittleNote\app\src\main\AndroidManifest.xml:27:9-36:20
 	android:label
-		ADDED from G:\git\LittleNote\app\src\main\AndroidManifest.xml:28:13-55
+		ADDED from G:\git\LittleNote\app\src\main\AndroidManifest.xml:29:13-55
 	android:parentActivityName
-		ADDED from G:\git\LittleNote\app\src\main\AndroidManifest.xml:29:13-52
+		ADDED from G:\git\LittleNote\app\src\main\AndroidManifest.xml:30:13-52
 	android:theme
-		ADDED from G:\git\LittleNote\app\src\main\AndroidManifest.xml:30:13-44
+		ADDED from G:\git\LittleNote\app\src\main\AndroidManifest.xml:31:13-44
 	android:name
-		ADDED from G:\git\LittleNote\app\src\main\AndroidManifest.xml:27:19-46
+		ADDED from G:\git\LittleNote\app\src\main\AndroidManifest.xml:28:13-40
+activity#com.lesson1.android2.littlenote.EditDeal
+ADDED from G:\git\LittleNote\app\src\main\AndroidManifest.xml:37:9-55
+	android:name
+		ADDED from G:\git\LittleNote\app\src\main\AndroidManifest.xml:37:19-43
 uses-sdk
 INJECTED from G:\git\LittleNote\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:24.2.0] G:\git\LittleNote\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.0\AndroidManifest.xml:21:5-23:78

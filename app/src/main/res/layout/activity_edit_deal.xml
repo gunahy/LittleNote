@@ -24,7 +24,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Заметка"
+        android:hint="Наименование"
         android:id="@+id/etTitleNote"
         android:layout_below="@+id/view"
         android:layout_alignParentLeft="true"

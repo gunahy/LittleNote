@@ -22,15 +22,9 @@ import com.lesson1.android2.littlenote.db.AppDB;
 
 import java.io.Serializable;
 
-public class DealsList extends AppCompatActivity {
+public class DealsList extends AppCompatActivity implements Initialable {
 
     private static final String EXTRA_USER_ID = "userId";
-    private static final String COL_TITLE = "title";
-    private static final String COL_DESC = "description";
-    private static final String COL_DATE = "date";
-    private static final String COL_USERID = "userid";
-    private static final String COL_COORD = "coord";
-
 
     private int userId;
     private Cursor cursor;
@@ -41,8 +35,7 @@ public class DealsList extends AppCompatActivity {
     private AdapterView.OnItemClickListener onItemClickListener;
     private FloatingActionButton fab;
     private View.OnClickListener onClickListener;
-    private EditText etTitleNote, etDescNote, etDateNote, etMap;
-    private String nTitle, nDesc, nDate, nCoord;
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,8 +44,8 @@ public class DealsList extends AppCompatActivity {
 
         userId = (Integer)getIntent().getExtras().get(EXTRA_USER_ID);
 
-        initViews();
         initDB();
+        initViews();
         initListView();
 
         setSupportActionBar(toolbar);
@@ -67,56 +60,51 @@ public class DealsList extends AppCompatActivity {
         onItemClickListener = new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                cursor = db.getUserNote(userId, position);
-//                if (cursor.moveToLast()){
-                    Intent setIntent = new Intent(DealsList.this, DealElement.class);
-//                    eIntent.putExtra(COL_USERID, cursor.getString(cursor.getColumnIndex(COL_USERID)));
-//                    eIntent.putExtra(COL_TITLE, cursor.getString(cursor.getColumnIndex(COL_TITLE)));
-//                    eIntent.putExtra(COL_DESC, cursor.getString(cursor.getColumnIndex(COL_DESC)));
-//                    eIntent.putExtra(COL_DATE, cursor.getString(cursor.getColumnIndex(COL_DATE)));
-//                    eIntent.putExtra(COL_COORD, cursor.getString(cursor.getColumnIndex(COL_COORD)));
-                    startActivity(setIntent);
-//                }
-//                else {
-//                    Toast.makeText(DealsList.this, "Необходимо добвать запись", Toast.LENGTH_LONG).show();
-//                }
-                //Toast.makeText(DealsList.this, "userId=" + userId + ", _id=" + position, Toast.LENGTH_LONG).show();
+//                cursor = db.getUserNote(1, 1);
+//                String a = cursor.getString(cursor.getColumnIndex(COL_TITLE));
+//                Toast.makeText(DealsList.this, a, Toast.LENGTH_LONG).show();
 
+
+//                intent = new Intent(DealsList.this, DealElement.class);
+//                intent.putExtra(COL_USERID, userId);
+//                intent.putExtra(COL__ID, 1);
+//                Toast.makeText(DealsList.this, "userID=" + userId + " id=" + id, Toast.LENGTH_LONG).show();
+//                startActivity(intent);
             }
         };
         return onItemClickListener;
-    }
-
-
-    private void initViews(){
-        fab = (FloatingActionButton) findViewById(R.id.fab);
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        lvUserNote = (ListView) findViewById(R.id.lvUserNote);
-        etTitleNote = (EditText) findViewById(R.id.etTitleNote);
-        etDescNote = (EditText) findViewById(R.id.etDescNote);
-        etDateNote = (EditText) findViewById(R.id.etDateNote);
-        etMap = (EditText) findViewById(R.id.etMap);
-    }
-
-    private void initListView(){
-        cursor = db.getAllUserNotes(userId);
-        nAdapter = new NotesCursorAdapter(DealsList.this, cursor, 0);
-        lvUserNote.setAdapter(nAdapter);
-    }
-
-    private void initDB() {
-        db = new AppDB(this);
-        db.openConnection(true);
     }
 
     private View.OnClickListener addNote(){
         onClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent editIntent = new Intent(DealsList.this, EditDealActivity.class);
-                startActivity(editIntent);
+                intent = new Intent(DealsList.this, EditDeal.class);
+                intent.putExtra(COL_USERID, userId);
+                startActivity(intent);
             }
         };
         return onClickListener;
     }
+
+    @Override
+    public void initViews(){
+        fab = (FloatingActionButton) findViewById(R.id.fab);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        lvUserNote = (ListView) findViewById(R.id.lvUserNote);
+    }
+
+    @Override
+    public void initListView(){
+        cursor = db.getAllUserNotes(userId);
+        nAdapter = new NotesCursorAdapter(DealsList.this, cursor, 0);
+        lvUserNote.setAdapter(nAdapter);
+    }
+
+    @Override
+    public void initDB() {
+        db = new AppDB(this);
+        db.openConnection(false);
+    }
+
 }

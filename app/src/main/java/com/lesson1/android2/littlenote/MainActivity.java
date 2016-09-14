@@ -21,7 +21,7 @@ import com.lesson1.android2.littlenote.db.AppDB;
 
 import java.io.Serializable;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements Initialable {
 
     private static final String DIALOG_TITLE_ADD = "Добавить пользователя";
     private static final String DIALOG_TITLE_UPDATE = "Редактировать пользователя";
@@ -69,43 +69,23 @@ public class MainActivity extends AppCompatActivity {
         usersListView.setOnItemClickListener(itemListerListener());
     }
 
-    private void initViews() {
-        usersListView = (ListView) findViewById(R.id.userListView);
-        inflater = LayoutInflater.from(MainActivity.this);
-        toolbar = (Toolbar)this.findViewById(R.id.my_toolbar);
-
-    }
-
-    private void initDB() {
-        db = new AppDB(this);
-        db.openConnection(false);
-    }
-
-    private void initListView(){
-        cursor = db.getAllUsers();
-        cAdapter = new PersonCursorAdapter(MainActivity.this, cursor, 0);
-        usersListView.setAdapter(cAdapter);
-    }
-
-
     //Слушатель для элемента списка ListView
-    private AdapterView.OnItemClickListener itemListerListener(){
+    private AdapterView.OnItemClickListener itemListerListener() {
         onItemClickListener = new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //TODO сделать условие, если db.getUserNotes(long id) > 0, выводить список записей. Иначе выводить активити добавления записи.
                 intent = new Intent(MainActivity.this, DealsList.class);
-                intent.putExtra(EXTRA_USER_ID, (int)id);
+                intent.putExtra(EXTRA_USER_ID, (int) id);
                 startActivity(intent);
             }
         };
         return onItemClickListener;
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main,menu);
+        getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
@@ -116,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         final int pos = userMenuInfo.position;
 
         //Кнопка для редактирования пользователя
-        menu.add(ITEM_TITLE_UPDATE).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener(){
+        menu.add(ITEM_TITLE_UPDATE).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 if (cursor.moveToPosition(pos)) {
@@ -161,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
                     inputForm = formBuilder.create();
                     inputForm.show();
                     return true;
-                }else return false;
+                } else return false;
             }
         });
 
@@ -177,8 +157,6 @@ public class MainActivity extends AppCompatActivity {
                 } else return false;
             }
         });
-
-
 
 
     }
@@ -247,5 +225,27 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         db.closeConnection();
+    }
+
+
+    @Override
+    public void initViews() {
+        usersListView = (ListView) findViewById(R.id.userListView);
+        inflater = LayoutInflater.from(MainActivity.this);
+        toolbar = (Toolbar) this.findViewById(R.id.my_toolbar);
+
+    }
+
+    @Override
+    public void initDB() {
+        db = new AppDB(this);
+        db.openConnection(false);
+    }
+
+    @Override
+    public void initListView() {
+        cursor = db.getAllUsers();
+        cAdapter = new PersonCursorAdapter(MainActivity.this, cursor, 0);
+        usersListView.setAdapter(cAdapter);
     }
 }

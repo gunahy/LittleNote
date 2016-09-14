@@ -38,8 +38,8 @@ public class AppDB {
             UserNotes._ID + " INTEGER PRIMARY KEY," +
             UserNotes.COLUMN_NAME_USER_ID + NUMERIC_TYPE_INT + DELIMITER +
             UserNotes.COLUMN_NAME_TITLE + TEXT_TYPE + DELIMITER +
-            UserNotes.COLUMN_NAME_DESCRIPTION + TEXT_TYPE +
-            UserNotes.COLUMN_NAME_DATE + TEXT_TYPE +
+            UserNotes.COLUMN_NAME_DESCRIPTION + TEXT_TYPE + DELIMITER +
+            UserNotes.COLUMN_NAME_DATE + TEXT_TYPE + DELIMITER +
             UserNotes.COLUMN_NAME_COORD + TEXT_TYPE +
             " )";
     private static final String SQL_DELETE_USERS = "DROP TABLE IF EXISTS " + Users.TABLE_USERS;
@@ -116,13 +116,15 @@ public class AppDB {
         long id = mDB.insert(Users.TABLE_USERS, null, v_user);
         v_note.put(UserNotes.COLUMN_NAME_USER_ID, id);
         v_note.put(UserNotes.COLUMN_NAME_TITLE, EMPTY_ROW);
-
+        v_note.put(UserNotes.COLUMN_NAME_DESCRIPTION, EMPTY_ROW);
+        v_note.put(UserNotes.COLUMN_NAME_DATE, EMPTY_ROW);
+        v_note.put(UserNotes.COLUMN_NAME_COORD, EMPTY_ROW);
         mDB.insert(UserNotes.TABLE_USER_NOTE, null, v_note);
         return id;
     }
 
     // добавить заметку польователя
-    public long addNote(int userId, String title, String decs, String date, String coord) {
+    public long addNote(String userId, String title, String decs, String date, String coord) {
         v_note = new ContentValues();
         v_note.put(UserNotes.COLUMN_NAME_USER_ID, userId);
         v_note.put(UserNotes.COLUMN_NAME_TITLE, title);
