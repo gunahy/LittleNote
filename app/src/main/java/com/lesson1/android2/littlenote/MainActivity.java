@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
+    //Слушатель для элемента списка ListView
     private AdapterView.OnItemClickListener itemListerListener(){
         onItemClickListener = new AdapterView.OnItemClickListener() {
             @Override

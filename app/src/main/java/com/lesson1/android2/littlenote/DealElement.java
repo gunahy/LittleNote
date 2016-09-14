@@ -10,8 +10,6 @@ public class DealElement extends AppCompatActivity {
 
     private Toolbar toolbar;
     private TextView tvTitleNote, tvDescNote, tvDateNote, tvMap;
-    private ArrayAdapter elementAdapter;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +27,7 @@ public class DealElement extends AppCompatActivity {
         tvDescNote = (TextView)findViewById(R.id.tvDescNote);
         tvDateNote = (TextView)findViewById(R.id.tvDateNote);
         tvMap = (TextView)findViewById(R.id.tvMap);
-
     }
+
+
 }

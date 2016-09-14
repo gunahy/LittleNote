@@ -40,6 +40,7 @@ public class AppDB {
             UserNotes.COLUMN_NAME_TITLE + TEXT_TYPE + DELIMITER +
             UserNotes.COLUMN_NAME_DESCRIPTION + TEXT_TYPE +
             UserNotes.COLUMN_NAME_DATE + TEXT_TYPE +
+            UserNotes.COLUMN_NAME_COORD + TEXT_TYPE +
             " )";
     private static final String SQL_DELETE_USERS = "DROP TABLE IF EXISTS " + Users.TABLE_USERS;
     private static final String SQL_DELETE_USERS_NOTES = "DROP TABLE IF EXISTS " + UserNotes.TABLE_USER_NOTE;
@@ -71,6 +72,7 @@ public class AppDB {
         public static final String COLUMN_NAME_TITLE = "title";
         public static final String COLUMN_NAME_DESCRIPTION = "description";
         public static final String COLUMN_NAME_DATE = "date";
+        public static final String COLUMN_NAME_COORD = "coord";
     }
 
     //Подключаемся к БД
@@ -123,11 +125,12 @@ public class AppDB {
         mDB.update(Users.TABLE_USERS, v_user, Users._ID + " = " + id, null);
     }
 
-    public void updateNote(long userId, String title, String decription, long date) {
+    public void updateNote(long userId, String title, String decription, String date, String coord) {
         v_note = new ContentValues();
         v_note.put(UserNotes.COLUMN_NAME_TITLE, title);
         v_note.put(UserNotes.COLUMN_NAME_DESCRIPTION, decription);
-        v_user.put(UserNotes.COLUMN_NAME_DATE, date);
+        v_note.put(UserNotes.COLUMN_NAME_DATE, date);
+        v_note.put(UserNotes.COLUMN_NAME_COORD, coord);
         mDB.update(UserNotes.TABLE_USER_NOTE, v_note, UserNotes.COLUMN_NAME_USER_ID + " = " + userId, null);
     }
 
