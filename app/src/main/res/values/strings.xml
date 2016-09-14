@@ -1,0 +1,5 @@
+<resources>
+    <string name="title_activity_deals_list">Список дел</string>
+    <string name="date_field">Дата создания: </string>
+    <string name="hint_date">01.01.2016</string>
+</resources>
