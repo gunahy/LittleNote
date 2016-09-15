@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.lesson1.android2.littlenote.db.AppDB;
 
@@ -16,8 +17,8 @@ public class EditDeal extends AppCompatActivity implements Initialable, View.OnC
     private AppDB db;
     private EditText etTitleNote, etDescNote, etDateNote, etMap;
     private Button btnSave;
-    private ContentValues values;
-    private String userID, nTitleNote, nDescNote, nDateNote, nCoord;
+    private String nTitleNote, nDescNote, nDateNote, nCoord;
+    private int userID;
 
 
     @Override
@@ -48,7 +49,6 @@ public class EditDeal extends AppCompatActivity implements Initialable, View.OnC
     public void initDB() {
         db = new AppDB(this);
         db.openConnection(false);
-
     }
 
     @Override
@@ -58,13 +58,14 @@ public class EditDeal extends AppCompatActivity implements Initialable, View.OnC
     @Override
     public void onClick(View v) {
         if (v == btnSave) {
-            userID = getIntent().getExtras().getString(COL_USERID);
+            userID = (Integer)getIntent().getExtras().get(COL_USERID);
             nTitleNote = etTitleNote.getText().toString();
             nDescNote = etDescNote.getText().toString();
             nDateNote = etDateNote.getText().toString();
             nCoord = etMap.getText().toString();
+            Toast.makeText(EditDeal.this, "userID=" + userID, Toast.LENGTH_LONG).show();
 
-            db.addNote(userID, nTitleNote, nDescNote, nDateNote, nCoord);
+            //db.addNote(userID, nTitleNote, nDescNote, nDateNote, nCoord);
 
         }
     }

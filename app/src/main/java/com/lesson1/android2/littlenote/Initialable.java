@@ -13,6 +13,8 @@ public interface Initialable {
     String COL_USERID = "userid";
     String COL_COORD = "coord";
     String COL__ID = "_ID";
+
+
     /*
 
     * Инициализация элементов UI

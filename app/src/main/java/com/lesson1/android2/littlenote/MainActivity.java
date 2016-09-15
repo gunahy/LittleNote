@@ -36,8 +36,6 @@ public class MainActivity extends AppCompatActivity implements Initialable {
     private static final String ADD_MESSAGE = "Добавлен пользователь с id=";
     private static final String UPDATE_MESSAGE = "Пользователь изменен";
 
-    private static final String EXTRA_USER_ID = "userId";
-
     private Cursor cursor;
     private AppDB db;
     private PersonCursorAdapter cAdapter;
@@ -76,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements Initialable {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //TODO сделать условие, если db.getUserNotes(long id) > 0, выводить список записей. Иначе выводить активити добавления записи.
                 intent = new Intent(MainActivity.this, DealsList.class);
-                intent.putExtra(EXTRA_USER_ID, (int) id);
+                intent.putExtra(COL_USERID, (int) id);
                 startActivity(intent);
             }
         };

@@ -24,7 +24,6 @@ import java.io.Serializable;
 
 public class DealsList extends AppCompatActivity implements Initialable {
 
-    private static final String EXTRA_USER_ID = "userId";
 
     private int userId;
     private Cursor cursor;
@@ -42,7 +41,7 @@ public class DealsList extends AppCompatActivity implements Initialable {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_deals_list);
 
-        userId = (Integer)getIntent().getExtras().get(EXTRA_USER_ID);
+        userId = (Integer)getIntent().getExtras().get(COL_USERID);
 
         initDB();
         initViews();
@@ -70,6 +69,7 @@ public class DealsList extends AppCompatActivity implements Initialable {
 //                intent.putExtra(COL__ID, 1);
 //                Toast.makeText(DealsList.this, "userID=" + userId + " id=" + id, Toast.LENGTH_LONG).show();
 //                startActivity(intent);
+                Toast.makeText(DealsList.this, "UserUD=" + userId, Toast.LENGTH_LONG).show();
             }
         };
         return onItemClickListener;
