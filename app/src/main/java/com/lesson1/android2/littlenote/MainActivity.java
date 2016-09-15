@@ -1,11 +1,11 @@
 package com.lesson1.android2.littlenote;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
-import android.os.Parcelable;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.ContextMenu;
@@ -17,11 +17,12 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.lesson1.android2.littlenote.adapters.PersonCursorAdapter;
 import com.lesson1.android2.littlenote.db.AppDB;
+import com.lesson1.android2.littlenote.settings.MyAppActivity;
 
-import java.io.Serializable;
-
-public class MainActivity extends AppCompatActivity implements Initialable {
+public class MainActivity extends MyAppActivity {
 
     private static final String DIALOG_TITLE_ADD = "Добавить пользователя";
     private static final String DIALOG_TITLE_UPDATE = "Редактировать пользователя";
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements Initialable {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        initDB();
+        db = initDB(this);
         initViews();
         initListView();
 
@@ -211,37 +212,24 @@ public class MainActivity extends AppCompatActivity implements Initialable {
                 initListView();
                 break;
             }
-
         }
-
         return true;
-
     }
 
-    //Закрываем базу данных при выходе
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        db.closeConnection();
-    }
-
-
-    @Override
-    public void initViews() {
+    protected void initViews() {
         usersListView = (ListView) findViewById(R.id.userListView);
         inflater = LayoutInflater.from(MainActivity.this);
         toolbar = (Toolbar) this.findViewById(R.id.my_toolbar);
-
     }
 
     @Override
-    public void initDB() {
-        db = new AppDB(this);
-        db.openConnection(false);
+    protected AppDB initDB(Context context) {
+        return super.initDB(context);
     }
 
     @Override
-    public void initListView() {
+    protected void initListView() {
         cursor = db.getAllUsers();
         cAdapter = new PersonCursorAdapter(MainActivity.this, cursor, 0);
         usersListView.setAdapter(cAdapter);

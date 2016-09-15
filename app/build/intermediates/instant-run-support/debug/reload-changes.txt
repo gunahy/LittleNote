@@ -1,2 +1,4 @@
-CHANGED,G:\git\LittleNote\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\android\tools\fd\runtime\AppPatchesLoaderImpl.class
-CHANGED,G:\git\LittleNote\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\lesson1\android2\littlenote\EditDeal$override.class
+CHANGED,D:\work\projects\LittleNote\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\lesson1\android2\littlenote\DealsList$override.class
+CHANGED,D:\work\projects\LittleNote\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\lesson1\android2\littlenote\DealEdit$override.class
+CHANGED,D:\work\projects\LittleNote\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\lesson1\android2\littlenote\DealElement$override.class
+CHANGED,D:\work\projects\LittleNote\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\android\tools\fd\runtime\AppPatchesLoaderImpl.class

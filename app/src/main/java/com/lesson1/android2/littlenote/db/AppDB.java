@@ -99,9 +99,8 @@ public class AppDB {
     }
 
     // выбрать заметку польователя
-    public Cursor getUserNote(int userId,long id){
-        return mDB.query(UserNotes.TABLE_USER_NOTE, null, UserNotes.COLUMN_NAME_USER_ID
-                + " = " + userId + " AND " + UserNotes._ID + " = " + id, null, null, null, null);
+    public Cursor getUserNote(long id){
+        return mDB.query(UserNotes.TABLE_USER_NOTE, null, UserNotes._ID + WHERE_ARGS, new String[]{String.valueOf(id)}, null, null, null);
     }
 
     // добавить запись в Users
@@ -124,7 +123,7 @@ public class AppDB {
     }
 
     // добавить заметку польователя
-    public long addNote(String userId, String title, String decs, String date, String coord) {
+    public long addNote(long userId, String title, String decs, String date, String coord) {
         v_note = new ContentValues();
         v_note.put(UserNotes.COLUMN_NAME_USER_ID, userId);
         v_note.put(UserNotes.COLUMN_NAME_TITLE, title);

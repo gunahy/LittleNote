@@ -41,7 +41,7 @@
                 android:value="com.lesson1.android2.littlenote.DealsList" />
             >
         </activity>
-        <activity android:name="com.lesson1.android2.littlenote.EditDeal" />
+        <activity android:name="com.lesson1.android2.littlenote.DealEdit" />
     </application>
 
 </manifest>
